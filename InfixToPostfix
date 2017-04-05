@@ -1,4 +1,5 @@
 /* Author: Aitanna Parker
+Read an infix expression from an input file and convert to postfix.  
 */
 
 #include <iostream>
@@ -40,8 +41,11 @@ int stringLength(char *A){
 
         cout<< A << endl;
  }
-// The function will take two strings, A and B, as parameters. It will replace the contents of string A with the contents of string B.
-
+ 
+ 
+/* The function will take two strings, A and B, as parameters. 
+It will replace the contents of string A with the contents of string B.
+*/
  bool stringCompare(char *A, char *B){
                 int i;
                 for ( i=0; i<10; i++){
