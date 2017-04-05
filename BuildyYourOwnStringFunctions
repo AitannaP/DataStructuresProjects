@@ -1,0 +1,109 @@
+/*
+
+Develop five modules to replace some of the built-in C/C++ string functions. Use char arrays to store strings.
+
+Name of function: void stringCopy(char *A, char *B)
+The function will take two strings, A and B, as parameters. 
+It will replace the contents of string A with the contents of string B.
+ 
+Name of function: bool stringCompare(char *A, char *B)
+This function will take two strings, A and B, as parameters and return a bool. 
+It will return true if the strings are exactly the same, character by character, and false otherwise. 
+The function will be case sensitive, that is, ‘
+‘A’ !=’a’. 
+
+Name of function: void stringConcatenation (char *A, char *B)
+This function will take two strings, A and B, as parameters.
+It will combine them such that B is appended to the end of A. 
+For example, given A=”abcd” and B=”efgh”, the function will change A so that it now contains “abcdefgh”. 
+String B will be unchanged by the function.
+
+Name of function: int stringPosition(char *A, char B)
+This function will take a string and a character as parameters.
+It will return the position in the string of the first occurrence of the character. 
+The first character in the string is in position 0. If the string does not contain the character, it returns -1.
+
+Name of function: int stringLength(char *A)
+This function will take a char array as a parameter. 
+It will shift all the characters of the string to the right by one and store the 
+length of the string in position zero. The length of the string does not include the null character. 
+The function will return the length which is stored in position zero. 
+
+*/
+
+#include <iostream>
+#include <fstream>
+
+using namespace std;
+
+ifstream in ("input.txt");
+ofstream out ("output.txt");
+
+
+int stringLength(char *A){
+
+            int i;
+            int total;
+            for (i=0; i<20; i++)
+                {
+                    if  (A[i]!=NULL){
+                        total++;
+                        }
+                    }
+
+
+            cout<< total << endl;
+            return total;
+ }
+
+
+ void stringCopy(char *A, char *B) {
+        cout << A <<  "  " << B << endl;
+
+        for (int i=0; i< 10; i++){
+            A[i]=B[i];
+            }
+
+        cout<< A << endl;
+ }
+/* 
+The function will take two strings, A and B, as parameters. 
+It will replace the contents of string Awith the contents of string B.
+*/
+ bool stringCompare(char *A, char *B){
+                int i;
+                for ( i=0; i<10; i++){
+
+                    if(A[i]=B[i]){
+                        return true;
+                        }
+
+                        }
+                    return false;
+                    }
+
+ void stringConcatenation (char *A, char *B){
+            int k=0;
+            int i;
+            for ( i= 0; i< 5; i++){
+
+                if( A[i]= '\0'){
+                    cout << i <<" null " << A[i]<< endl;
+
+                        }
+                }
+            cout<< "string concat " << A << endl;
+    }
+
+
+
+int main () {
+
+    char word1[6];
+    char word2[6];
+
+    cin>> word1 >> word2;
+    stringConcatenation(word1, word2);
+
+}
+
