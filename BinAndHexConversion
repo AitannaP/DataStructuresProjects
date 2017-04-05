@@ -1,0 +1,77 @@
+/*  
+Author: Aitanna Parker
+Write a program that takes an integer from the user and converts it into its proper binary 
+and hexadecimal representation using a LIFO structure. 
+*/
+
+
+#include <iostream>
+#include <fstream>
+using namespace std;
+
+void binary(int b){
+
+//binary conversion
+          //temp1 keeps track of b /2
+         //temp2 outputs binary of b
+ int temp1;
+ temp1=b;
+
+ int temp2;
+ temp2=b;
+
+ int foob [4];
+ int j=0;
+
+    while( temp1 !=0 && temp1 !=1){
+
+            temp1=temp1/2;
+           temp2=temp1%2;
+        foob[j]=temp2;
+        j++;
+
+    }
+
+cout<<  "binary: "<< foob[0] << foob[1] << foob[2]<< foob[3] << endl;
+
+}
+
+
+void hex(int a){
+
+//hexidecimal conversion
+
+int temp3;
+    temp3=a;
+int temp4;
+    temp4=a;
+int fooh[4];
+
+int i=0;
+    while( temp3 !=0 ){
+            temp4=temp3%16;
+            temp3=temp3/16;
+            fooh[i]= temp4;
+         i++;
+
+    }
+    cout<< "hex: 0x" << fooh[1] << fooh[0]<< endl;
+
+}
+
+
+int main(){
+    int a;
+    int b;
+
+    cout<< " Type number to convert it to hexidecimal:";
+    cin>> a;
+    hex(a);
+
+
+    cout<< "Type number to convert it to binary: ";
+    cin>>b;
+    binary(b);
+
+
+}
