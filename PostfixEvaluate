@@ -1,0 +1,60 @@
+/* 
+Read a postfix expression from an input file. Evaluate the postfix format and display the results.
+
+Precondition: 
+The expression will be read from a file (input.txt) that contains a single line. 
+There will be no spaces between the operands and the operators.
+The following operators are allowed: + - * / 
+The normal rules of precedence will apply.
+No error checking is necessary.
+The numbers will all be greater than 0 and less than 10 (positive, single digit numbers)
+
+
+
+Example:
+
+12+
+
+Result is 
+             3
+*/
+
+
+#include <iostream>
+#include <queue>
+using namespace std;
+
+void eval( int a, int b, char c){
+int res;
+    switch (c)
+    {
+        case '+':
+            res = a + b;
+            break;
+        case '-':
+            res = a - b;
+            break;
+        case '*':
+            res = a * b;
+            break;
+        case '/':
+            res = a / b;
+            break;
+        }
+        cout<< res<< endl;
+
+    }
+
+int main() {
+int a;
+int b;
+char c;
+cout<< " Enter a number with white space in between numbers: "<< endl;
+
+cin>>a >>b >>c;
+
+eval(a,b,c);
+
+
+
+}
