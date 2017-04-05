@@ -1,84 +1,25 @@
-/* Author: Aitanna Parker
-Read an infix expression from an input file and convert to postfix.  
+/* 
+Author: Aitanna Parker
+Read an infix expression from an input file and convert to postfix. 
 */
+
 
 #include <iostream>
-#include <fstream>
-
+#include <queue>
 using namespace std;
 
-ifstream in ("input.txt");
-ofstream out ("output.txt");
 
 
 
+int main(){
 
+int a;
+int b;
+char c;
+cout<< " Enter a number, operator , then a numer: "<< endl;
 
+cin>>a >>c >>b;
 
-int stringLength(char *A){
-
-            int i;
-            int total;
-            for (i=0; i<20; i++)
-                {
-                    if  (A[i]!=NULL){
-                        total++;
-                        }
-                    }
-
-
-            cout<< total << endl;
-            return total;
- }
-
-
- void stringCopy(char *A, char *B) {
-        cout << A <<  "  " << B << endl;
-
-        for (int i=0; i< 10; i++){
-            A[i]=B[i];
-            }
-
-        cout<< A << endl;
- }
- 
- 
-/* The function will take two strings, A and B, as parameters. 
-It will replace the contents of string A with the contents of string B.
-*/
- bool stringCompare(char *A, char *B){
-                int i;
-                for ( i=0; i<10; i++){
-
-                    if(A[i]=B[i]){
-                        return true;
-                        }
-
-                        }
-                    return false;
-                    }
-
- void stringConcatenation (char *A, char *B){
-            int k=0;
-            int i;
-            for ( i= 0; i< 5; i++){
-
-                if( A[i]= '\0'){
-                    cout << i <<" null " << A[i]<< endl;
-
-                        }
-                }
-            cout<< "string concat " << A << endl;
-    }
-
-
-
-int main () {
-
-    char word1[6];
-    char word2[6];
-
-    cin>> word1 >> word2;
-    stringConcatenation(word1, word2);
+cout << a << b<< c;
 
 }
