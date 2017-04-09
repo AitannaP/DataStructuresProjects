@@ -1,0 +1,77 @@
+/*
+Author: Aitanna Parker
+
+Write a recursive function that does the following:
+
+Given a number, add all the digits and display the sum. 
+Example:
+		The sum of the number 5432 would be 14.
+
+
+Do not use the static modifier. No global variables. Your program should 
+implement a non-tail recursive algorithm. In other words, it should do something 
+as it moves towards the base case, the tail, and also do something as it comes back 
+from the tail to the beginning.
+ 
+The input is going to be received as a single integer from the user, 
+in the main function. The input will not be more than four digits long (
+no validation necessary).
+
+*/
+
+
+#include <iostream>
+using namespace std;
+
+int sum(int x, int place){
+int value;
+
+
+// thousands place
+                if ( place ==1){
+                    value=x/1000;
+                        }
+
+
+//hundreds place
+                if ( place ==2){
+                    value=(x%1000)/100;
+                        }
+
+
+
+//10s place
+                if ( place ==3){
+                    value=(((x%1000)%100)/10);
+                        }
+
+
+
+
+//1s place
+                if ( place ==4){
+                    value=x%10;
+                    }
+
+                if( place>4){
+                    value=0;
+                    return 0;
+                    }   //base case
+                else
+                    return (value +sum(x, place+1 ));
+
+}
+
+
+
+
+
+
+
+int main(){
+
+    int val;
+    cin  >> val;
+    cout<< sum(val,1)<< endl;
+
+}
